@@ -5,8 +5,7 @@ const { fetchProjects, fetchProjectById, fetchaddProject, fetchUpdateProject, fe
 const getProjects = async (req, res) => {
     try {
         const { projectName,skill } = req.query;    
-        if (projectName) {
-            
+        if (projectName) {        
             const projects = await fetchProjectsByNameCaseInsensitive(projectName);
             return res.status(200).json(projects); 
         } 
